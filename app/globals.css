@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Accent principal — teracotă */
+  --color-terra-50: #faf1ec;
+  --color-terra-100: #f3e0d5;
+  --color-terra-200: #e8c3ae;
+  --color-terra-300: #dba184;
+  --color-terra-400: #cd7f5c;
+  --color-terra-500: #c15f3c;
+  --color-terra-600: #a84e2f;
+  --color-terra-700: #8a3f26;
+  --color-terra-800: #66301d;
+  --color-terra-900: #442013;
+
+  /* Accent secundar discret — chihlimbar */
+  --color-amber-warm: #e0a458;
+  --color-amber-tint: #f8ecd9;
+
+  /* Neutre calde */
+  --color-cream: #faf6f0;
+  --color-surface: #fffdfa;
+  --color-ink: #201b16;
+  --color-ink-soft: #5c554d;
+  --color-line: #e7dfd4;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+::selection {
+  background-color: var(--color-terra-100);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-terra-600);
+  outline-offset: 2px;
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-terra-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-terra-700;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-terra-600/40 bg-surface px-5 py-2.5 text-sm font-semibold text-terra-700 transition-colors hover:bg-terra-50;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-surface shadow-sm;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-terra-600;
+  }
 }
