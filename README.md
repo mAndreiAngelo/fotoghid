@@ -6,6 +6,14 @@ accesorii, rapoarte de aspect și editare.
 
 Construit cu **Next.js (App Router) + TypeScript + Tailwind CSS**.
 
+**Site live:** https://mandreiangelo.github.io/fotoghid/
+
+## Publicare
+
+Site-ul e găzduit gratuit pe GitHub Pages (export static din ramura
+`gh-pages`). După orice modificare, rulează `deploy-pages.cmd` — face
+build-ul cu prefixul `/fotoghid` și împinge rezultatul pe `gh-pages`.
+
 ## Rulare locală
 
 ```bash
